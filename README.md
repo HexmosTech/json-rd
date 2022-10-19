@@ -78,14 +78,14 @@ This is my VSCode debug configuration:
 }
 ```
 
-To debug particular case, one can add a *conditional breakpoint* such as:
+To debug particular case, one can add a [*conditional breakpoint*](https://code.visualstudio.com/docs/editor/debugging#_conditional-breakpoints) such as:
 
 ```
 "partial_filename" in m
 ```
 
 Where `m` is one of the loop variables iterating through various sample JSON
-files.
+files (see the `test_match` and `test_no_match` functions in [test_jsonparser.py](./src/test_jsonparser.py)).
 
 ## Explanations
 
