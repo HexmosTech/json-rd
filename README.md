@@ -19,11 +19,19 @@ more compliant & also *flexible* JSON parser in pure python.
 
 To learn more about recursive descent parsing, I highly recommend working through
 [Building Recursive Descent Parsers: The Definitive Guide](https://www.booleanworld.com/building-recursive-descent-parsers-definitive-guide/). The file [parser.py](./src/parser.py)
-is from this original tutorial. Thanks to the author in sharing such a great resource
+is from this original tutorial. Thanks to the author for sharing such a great learning resource
 with the world.
 
 
-## How-to
+## How-tos
+
+### How do I setup/initialize the project?
+
+Project requires `python3.9+`. Once you have it, run:
+
+```
+poetry install
+```
 
 ### How do I run the test cases?
 
@@ -79,7 +87,7 @@ To debug particular case, one can add a *conditional breakpoint* such as:
 Where `m` is one of the loop variables iterating through various sample JSON
 files.
 
-## Explanation
+## Explanations
 
 How does a recursive parser work in a nutshell? What's a nice way
 to think about them, as a programmer/engineer?
@@ -115,7 +123,11 @@ primitives mentioned above:
 These help with avoiding `try/catch` structure on failing to match some piece
 of text.
 
-## Reference
+Once you understand the parser primitives and convenience functions, you are ready to translate
+an EBNF or other grammar specifications into python
+functions built on top of the primitives. 
+
+## References
 
 1. [Building Recursive Descent Parsers: The Definitive Guide - Boolean World](https://www.booleanworld.com/building-recursive-descent-parsers-definitive-guide/): Tutorial on recursive
 descent parsers
@@ -124,3 +136,13 @@ descent parsers
 in EBNF-type format
 1. [Railroad Diagram Generator](https://www.bottlecaps.de/rr/ui): Generate railroad diagrams for 
 visualizing grammar
+
+## FAQs/RAQs
+
+### Why are you doing this? Why not use the `json` library?
+
+It was great fun learning about recursive descent parsers, and then building a `json` parser on that understanding. That's one reason.
+
+Secondly, I am trying to enhance an internal product at
+[Hexmos](https://hexmos.com), which embeds JSON as a 
+sub-language as part of its [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). Also, it has custom flexibility requirements on top of standard JSON. Therefore, to fulfill such additional requires, I wanted more fine-grained control over JSON parsing process.
