@@ -8,7 +8,7 @@ to the resultant code. I noticed quite a few tests cases failing, especially
 related to escaping, numbers and special characters. So, I set out to build a 
 more compliant & also *flexible* JSON parser in pure python.
 
-`json-rd` is different from the standard JSON in a few ways:
+`json-rd` is different from standard JSON in a few ways:
 
 1. Allows comments starting with `#`
 1. Allows single quoted strings
@@ -145,4 +145,4 @@ It was great fun learning about recursive descent parsers, and then building a `
 
 Secondly, I am trying to enhance an internal product at
 [Hexmos](https://hexmos.com), which embeds JSON as a 
-sub-language as part of its [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). Also, it has custom flexibility requirements on top of standard JSON. Therefore, to fulfill such additional requires, I wanted more fine-grained control over JSON parsing process.
+sub-language as part of its [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). Also, it has custom flexibility requirements on top of standard JSON. Therefore, to fulfill such additional requirements, I wanted more fine-grained control over JSON parsing process.
