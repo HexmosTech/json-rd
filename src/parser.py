@@ -137,6 +137,8 @@ class Parser:
         if len(last_error_rules) == 1:
             raise last_exception
         else:
+            if last_error_pos >= self.len:
+                last_error_pos = self.len - 1
             raise ParseError(
                 last_error_pos,
                 "Expected %s but got %s",
